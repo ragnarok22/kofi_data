@@ -1,0 +1,10 @@
+{
+  "name": "kofi_data",
+  "version": "1.0.0",
+  "description": "Get ko-fi account data",
+  "main": "index.js",
+  "repository": "https://github.com/ragnarok22/kofi_data",
+  "author": "Reinier Hernández",
+  "license": "MIT",
+  "private": false
+}
