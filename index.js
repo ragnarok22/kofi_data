@@ -14,10 +14,11 @@ app.get('/:username', (req, res) => {
     console.log(results);
     res.send(results);
   }).catch(error => {
-    console.log(error);
+    console.log(error.name);
     console.log(error.message);
     res.send({
-      code: error.code,
+      type: 'error',
+      code: error.name,
       message: error.message
     })
   });

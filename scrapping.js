@@ -20,6 +20,7 @@ const getCrowdfunding = async (username) => {
 
   let results = await page.evaluate(() => {
     let results = {
+      type: 'success',
       title: '',
       current: '',
       goal: '',
