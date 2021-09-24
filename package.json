@@ -8,10 +8,13 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "chrome-aws-lambda": "^10.1.0",
     "express": "^4.17.1",
-    "puppeteer": "^10.4.0"
+    "puppeteer": "^10.4.0",
+    "puppeteer-core": "^10.4.0"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "ENV=development node index.js",
+    "start:prod": "ENV=production node index.js"
   }
 }

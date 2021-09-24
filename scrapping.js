@@ -1,4 +1,12 @@
-const puppeteer = require("puppeteer");
+let chrome = {}
+let puppeteer;
+
+if (process.env.ENV === 'development') {
+  puppeteer = require("puppeteer");
+} else {
+  chrome = require('chrome-aws-lambda');
+  puppeteer = require('puppeteer-core');
+}
 
 const getCrowdfunding = async (username) => {
   // url del perfil de ko-fi
@@ -8,7 +16,7 @@ const getCrowdfunding = async (username) => {
   const hideBrowser = true;
 
   // Lanzamos un nuevo navegador.
-  const browser = await puppeteer.launch({ args: ['--no-sandbox'], headless: hideBrowser, ignoreHTTPSErrors: true });
+  const browser = await puppeteer.launch({ args: [...chrome.args, '--no-sandbox'], headless: hideBrowser, ignoreHTTPSErrors: true, executablePath: await chrome.executablePath, });
 
   // Abrimos una nueva página.
   const page = await browser.newPage();
