@@ -20,7 +20,7 @@ app.get('/:username', async (req, res) => {
     console.log(error.name);
     console.log(error.message);
 
-    res.send({
+    res.status(500).send({
       type: 'error',
       code: error.name,
       message: error.message
