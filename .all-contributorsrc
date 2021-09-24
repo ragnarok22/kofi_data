@@ -1,0 +1,26 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "miguelhdez1994",
+      "name": "Miguel Hernandez San Nicolas",
+      "avatar_url": "https://avatars.githubusercontent.com/u/71846320?v=4",
+      "profile": "https://github.com/miguelhdez1994",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "kofi_data",
+  "projectOwner": "ragnarok22",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
