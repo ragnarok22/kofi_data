@@ -1,27 +1,32 @@
 const express = require('express')
 const scrapping = require('./scrapping')
 
-const app = express()
-const port = 3000
+const app = express();
+const port = 3000;
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.get('/:username', (req, res) => {
-  const username = req.params.username
-  scrapping.getCrowdfunding(username).then((results) => {
-    console.log(results);
-    res.send(results);
-  }).catch(error => {
+app.get('/:username', async (req, res) => {
+  try {
+
+    const { username } = req.params;
+    let result = await scrapping.getCrowdfunding(username);
+    res.send(result);
+
+  } catch (error) {
+
     console.log(error.name);
     console.log(error.message);
+
     res.send({
       type: 'error',
       code: error.name,
       message: error.message
     })
-  });
+
+  }
 })
 
 app.listen(port, () => {
